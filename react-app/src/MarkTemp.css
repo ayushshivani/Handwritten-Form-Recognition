@@ -1,0 +1,88 @@
+.resize-drag {
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.border2 {
+  width: 175px;
+  height: 35px;
+
+  border-style : solid;
+  border-color : red;
+  position : absolute;
+}
+
+body{
+  margin:0;
+}
+.wrapper{
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  height:100vh;
+  margin:-20px;
+}
+.wrapper >div{
+  background:#ddd;
+  padding:1em;
+}
+.wrapper > div:nth-child(odd){
+  background:#eee;
+}
+
+.accept{
+  position : absolute;
+  top :-1.5em;
+  right : 1.5em;
+  height: 1.1em;
+  border-radius: 50%;
+  background-color: greenyellow;
+}
+
+.reject{
+  position : absolute;
+  top :-1.5em;
+  right :0;
+  height: 1.1em;
+  border-radius: 50%;
+  background-color:red;
+}
+
+.fieldName{
+  position: absolute;
+  bottom :-11em;
+  left :0;
+}
+
+a, a:active, a:focus, 
+button, button:focus, button:active, 
+.btn, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn.focus:active, .btn.active.focus {
+    outline: none;
+    outline: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+#form{
+  display:inline-block;
+  padding:0;
+  margin:0;
+}
+#imagePanel{
+  float:center;
+  text-align: center;
+  display: table;
+} 
+#file{
+  display: none;
+}
+#link{
+  cursor:pointer;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#templateSubmit{
+  display:none;
+}

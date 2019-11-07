@@ -1,0 +1,12 @@
+_1
+On clicking resize and fix field multiple times the functionality gets slower
+_2 FIXED
+Template description is mandatory
+_3
+Fix first field and then delete it will give an error on submission
+_4
+BoxCount Accepts letters and thus sets them as None
+_5
+Deleting Template doesn't work sometimes (Thread Error)
+_6 FIXED
+Cascade deletion of fields not done
