@@ -85,7 +85,11 @@ class Align():
 
         # Extract key points and SIFT descriptors
         sift = cv2.xfeatures2d.SIFT_create()
+        # sift = cv2.SIFT()
+
         kp, desc = sift.detectAndCompute(img_gray, None)
+        # orb = cv2.ORB()
+
 
         # Extract positions of key points
         kp = np.array([p.pt for p in kp]).T

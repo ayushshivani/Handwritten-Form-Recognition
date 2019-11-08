@@ -1,10 +1,10 @@
 import sys
 sys.path.insert(0, './ImageRegistration')
 sys.path.insert(0, './Extracts')
+from flask_hashing import Hashing
 
 from flask import *
 from sqlalchemy import *
-from flask_hashing import Hashing
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_cors import CORS, cross_origin
 from werkzeug.utils import secure_filename
@@ -51,7 +51,9 @@ class AlchemyEncoder(json.JSONEncoder):
 
 @app.route('/login', methods=['POST'])
 def login():
+    print("56789")
     if request.method == 'POST':
+        print(request.get_json())
         password = request.get_json()['password']
         username = request.get_json()['username']
         user = sqlsession.query(User).filter_by(username=username).first()
@@ -340,4 +342,4 @@ def delete_field(fid=None):
 
 if __name__ == '__main__':
     app.secret_key = os.urandom(12)
-    app.run(host='0.0.0.0' ,port = '80')
+    app.run(host='0.0.0.0' ,port = '9000',debug=True)

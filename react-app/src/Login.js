@@ -71,13 +71,19 @@ class Login extends Component {
     event.preventDefault();
       axios.post('/login',JSON.stringify(this.state.formData))
       .then(_ => {
+          console.log("here");
+
         this.setState({submitted: true});
         localStorage.setItem("username",this.state.formData.username);
       })
        .catch(error =>{
+        if (error.response && error.response.data) {
          this.setState({"error" : error.response.data.error})
-         this.setState({submitted:false});
-       });
+         this.setState({submitted:true});
+
+        }
+        }
+       );
   }
 
   handleUChange(event) {

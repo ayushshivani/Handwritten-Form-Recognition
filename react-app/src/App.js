@@ -28,6 +28,7 @@ class App extends Component {
       dict['Signup/Login']='/login';
     }
     else{
+      console.log("ADad");
       dict['Mark Template']='/marktemp';
       dict['Get Data']='/getdata';
       dict['Previous Templates']='/prevtemplates';

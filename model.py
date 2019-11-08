@@ -5,6 +5,7 @@ from sqlalchemy import *
 
 Base = declarative_base()
 engine = create_engine('sqlite:///user.db',connect_args={'check_same_thread': False})
+engine.connect()
 Session = sessionmaker(bind=engine)
 sqlsession = Session()
 

@@ -76,8 +76,9 @@ class Signup extends Component {
         localStorage.setItem("username",this.state.formData.username);
       })
       .catch(error =>{
+        if(error.response && error.response.data){
         this.setState({"error" : error.response.data.error})
-        this.setState({submitted:false});
+        this.setState({submitted:true});}
       });
   }
   handleEChange(event) {
